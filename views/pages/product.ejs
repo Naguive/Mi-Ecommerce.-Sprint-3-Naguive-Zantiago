@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/footer-abajo.css" />
+    <link rel="stylesheet" href="/css/provisional.css" />
+    <link rel="stylesheet" href="/css/product.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <script
+      src="https://kit.fontawesome.com/4070a3aa63.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Producto</title>
+  </head>
+  <body>
+    <%- include("../partials/header")%>
+    <main class="main-container">
+      <div class="container">
+        <section class="container-root">
+          <img src="/assets/arrow-left.svg" alt="" class="container-arrow" />
+          <a class="container-volver" href="/">Volver</a>
+          <img src="/assets/chevron-right.svg" alt="" class="container-arrow" />
+          <a class="container-volver" href="#">Alimentos</a>
+        </section>
+        <section class="container-producto-detalle">
+          <div class="flow-images">
+            <img
+              src="/assets/D_NQ_NP_717087-MLA41598235072_042020-O.webp"
+              alt=""
+              class="foto-detalle-flow foto1"
+            />
+            <img
+              src="/assets/Jack-Daniels-un-whiskey-para-cada-momento_2-1.jpg"
+              alt=""
+              class="foto-detalle-flow foto2"
+            />
+            <img
+              src="/assets/D_NQ_NP_705560-MLA44741701921_012021-O.webp"
+              alt=""
+              class="foto-detalle-flow foto3"
+            />
+          </div>
+
+          <div class="foto-demostracion">
+            <img
+              src="/assets/images (2).jpeg"
+              alt=""
+              class="foto-detalle-xlsize"
+            />
+          </div>
+
+          <div class="product-info">
+            <p class="title-product">Whiskey Jack Daniels Honey 750ml</p>
+            <div class="section-puntos">
+              <p class="text-puntos">19.000</p>
+              <p class="subtitle-puntos">PUNTOS</p>
+            </div>
+            <div class="button-add-to-cart">
+              <a class="to-cart" href="/cart"> Agregar al Carrito </a>
+            </div>
+            <p class="text-product-info">
+              Un verdaderamente fabuloso licor de whiskey Jack Daniels. Está
+              hecho con una mezcla de ricas especias y suave, miel tersa y el
+              resultado es delicioso sobre hielo o café.
+              <br />
+              <br />
+              Aroma de caramelo y roble carbonizado, un poco de flor de naranja,
+              miel de de manuka y vanilla.
+              <br />
+              <br />
+              Boca: grueso y cremoso, con notas de vainilla, roble tostado, miel
+              de nuevo, un poco de albaricoque también.
+              <br />
+              <br />
+              Acabado: De nuena longitud - redondeado y rico.
+              <br />
+              <br />
+              No incluye vasos, la foto es sólo ilustrativa.
+            </p>
+          </div>
+        </section>
+
+        <section class="text-opciones">
+          <p class="text-te-puede-interesar">También te puede interesar</p>
+        </section>
+        <div class="lista-productos">
+          <!-- PRODUCTOS SUGUERIDOS, SOLAMENTE LOS QUE TIENE VALOR TRUE -->
+          <% trueSuggested.forEach(product => { %>
+          <div class="contenedor-producto">
+            <img
+              src="<%= product.image %>"
+              alt="whiskey jack"
+              class="producto-img"
+            />
+            <div class="etiqueta">
+              <p class="nombre"><%= product.title %></p>
+              <div class="contenedor-puntos">
+                <p class="puntos"><%= product.price %></p>
+                <p class="leyenda">PUNTOS</p>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <%- include("../partials/menu")%>
+    </main>
+
+    <footer>
+      <div class="social-media">
+        <img src="/assets/twitter.svg" alt="Logotipo" class="grupo1" />
+        <img src="/assets/facebook.svg" alt="Logotipo" class="grupo1" />
+        <img src="/assets/instagram.svg" alt="Logotipo" class="grupo1" />
+        <img src="/assets/youtube.svg" alt="Logotipo" class="grupo1" />
+      </div>
+      <div class="derechos">
+        <p class="Derechos">
+          &copy; MiEcommerce. Todos los derechos reservados
+        </p>
+      </div>
+      <div class="tiendas">
+        <img src="/assets/Apple.svg" alt="Logotipo" class="grupo2" />
+        <p class="TextoFooter">App Store</p>
+        <img src="/assets/Google-play.svg" alt="Logotipo" class="grupo2" />
+        <p class="TextoFooter">Google Play</p>
+      </div>
+    </footer>
+    <script src="/js/product.js"></script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/product.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/provisional.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/footer-abajo.css" />
+    <link rel="stylesheet" href="/css/galeriaImagenes.css" />
+    <script
+      src="https://kit.fontawesome.com/4070a3aa63.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Producto</title>
+  </head>
+  <body>
+    <%- include("../partials/header")%>
+    <main class="main-container">
+      <div class="container">
+        <section class="container-root">
+          <img src="/assets/arrow-left.svg" alt="" class="container-arrow" />
+          <a class="container-volver" href="/">Volver</a>
+          <img src="/assets/chevron-right.svg" alt="" class="container-arrow" />
+          <a class="container-volver" href="#">Alimentos</a>
+        </section>
+        <section class="container-producto-detalle">
+          <div class="flow-images">
+            <% if (locals.productToShow.image === null) { %>
+            <img
+              src="/assets/fallback.png"
+              alt=""
+              class="foto-detalle-flow img"
+            /><% }else{ %>
+            <img
+              src="<%= locals.productToShow.image %>"
+              alt=""
+              class="foto-detalle-flow img"
+            />
+            <% }%> <% if (locals.productToShow.image === null) { %>
+            <img
+              src="/assets/fallback.png"
+              alt=""
+              class="foto-detalle-flow img"
+            /><% }else{ %>
+            <img
+              src="<%= locals.productToShow.image %>"
+              alt=""
+              class="foto-detalle-flow img"
+            />
+            <% }%> <% if (locals.productToShow.image === null) { %>
+            <img
+              src="/assets/fallback.png"
+              alt=""
+              class="foto-detalle-flow img"
+            /><% }else{ %>
+            <img
+              src="<%= locals.productToShow.image %>"
+              alt=""
+              class="foto-detalle-flow img"
+            />
+            <% }%>
+          </div>
+          <div class="foto-demostracion">
+            <% if (locals.productToShow.image === null) { %>
+            <img src="/assets/fallback.png" class="foto-detalle-flow img" />
+            <% }else{ %>
+            <img
+              src="<%= locals.productToShow.image %>"
+              alt=""
+              class="foto-detalle-xlsize imagen-principal"
+            />
+            <% }%>
+          </div>
+          <div class="product-info">
+            <p class="title-product"><%= locals.productToShow.title %></p>
+            <div class="section-puntos">
+              <p class="text-puntos"><%= locals.productToShow.price %></p>
+              <p class="subtitle-puntos">PUNTOS</p>
+            </div>
+            <div class="button-add-to-cart">
+              <a class="to-cart" href="/cart"> Agregar al Carrito </a>
+            </div>
+            <p class="text-product-info">
+              <%= locals.productToShow.description %>
+            </p>
+          </div>
+        </section>
+        <section class="text-opciones">
+          <p class="text-te-puede-interesar">También te puede interesar</p>
+        </section>
+        <section class="lista-productos">
+          <div class="contenedor-producto">
+            <img
+              src="/assets/images (1).jpeg"
+              alt="whiskey jack"
+              class="producto-img"
+            />
+            <div class="etiqueta">
+              <p class="nombre">Coca Cola Lata 220mL Pack Original x8</p>
+              <div class="contenedor-puntos">
+                <p class="puntos">760</p>
+                <p class="leyenda">PUNTOS</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contenedor-producto">
+            <img
+              src="/assets/images (1).jpeg"
+              alt="whiskey jack"
+              class="producto-img"
+            />
+            <div class="etiqueta">
+              <p class="nombre">NOMBRE DEL PRODUCTO O SERVICIO</p>
+              <div class="contenedor-puntos">
+                <p class="puntos">XX.XXX</p>
+                <p class="leyenda">PUNTOS</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contenedor-producto">
+            <img
+              src="/assets/images (1).jpeg"
+              alt="whiskey jack"
+              class="producto-img"
+            />
+            <div class="etiqueta">
+              <p class="nombre">NOMBRE DEL PRODUCTO O SERVICIO</p>
+              <div class="contenedor-puntos">
+                <p class="puntos">XX.XXX</p>
+                <p class="leyenda">PUNTOS</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contenedor-producto">
+            <img
+              src="/assets/images (1).jpeg"
+              alt="whiskey jack"
+              class="producto-img"
+            />
+            <div class="etiqueta">
+              <p class="nombre">NOMBRE DEL PRODUCTO O SERVICIO</p>
+              <div class="contenedor-puntos">
+                <p class="puntos">XX.XXX</p>
+                <p class="leyenda">PUNTOS</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <%- include("../partials/menu")%>
+      </div>
+    </main>
+    <%- include("../partials/footer")%>
+  </body>
+  <script src="/js/galeriaImagenes.js"></script>
+</html>
